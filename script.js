@@ -31,8 +31,26 @@ function multiplyByTwo(data) {
   });
 }
 
-// Chain the promises and handle the output
+// Call getData() and chain the promises
 getData()
   .then(filterEven)
   .then(multiplyByTwo)
   .catch(error => console.error(error));
+
+// Cypress test code
+describe('Data Manipulation with Promises', () => {
+  it('should filter even numbers and multiply them by 2', () => {
+    cy.visit('/main.html'); 
+
+    cy.get('#output').should('have.text', ''); 
+
+    // Increase wait time to allow filterEven() to complete
+    cy.wait(1500); 
+
+    cy.get('#output').should('have.text', '2,4'); 
+
+    cy.wait(2000); 
+
+    cy.get('#output').should('have.text', '4,8'); 
+  });
+});
