@@ -3,7 +3,7 @@ function getData() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([1, 2, 3, 4]);
-    }, 3000);
+    }, 3000); // Simulate data fetching
   });
 }
 
@@ -12,9 +12,10 @@ function filterEven(data) {
   return new Promise((resolve) => {
     setTimeout(() => {
       const evenNumbers = data.filter((num) => num % 2 === 0);
-      document.getElementById('output').textContent = evenNumbers.join(', ');
+      // Display intermediate result
+      document.getElementById('output').textContent = ${evenNumbers.join(', ')};
       resolve(evenNumbers);
-    }, 1000);
+    }, 1000); // Simulate processing
   });
 }
 
@@ -23,9 +24,10 @@ function multiplyByTwo(data) {
   return new Promise((resolve) => {
     setTimeout(() => {
       const multipliedNumbers = data.map((num) => num * 2);
-      document.getElementById('output').textContent = multipliedNumbers.join(', ');
+      // Display final result
+      document.getElementById('output').textContent =${multipliedNumbers.join(', ')};
       resolve(multipliedNumbers);
-    }, 2000);
+    }, 2000); // Simulate processing
   });
 }
 
