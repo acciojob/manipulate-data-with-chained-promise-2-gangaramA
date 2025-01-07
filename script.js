@@ -1,9 +1,10 @@
 // getData() function
 function getData() {
   return new Promise((resolve) => {
+    // Resolve immediately (or after a very short delay)
     setTimeout(() => {
       resolve([1, 2, 3, 4]);
-    }, 3000); // Resolve after 3 seconds
+    }, 0); // Resolve immediately
   });
 }
 
@@ -15,7 +16,7 @@ function filterEven(data) {
       // Display intermediate result
       document.getElementById('output').textContent = evenNumbers.join(', ');
       resolve(evenNumbers);
-    }, 1000); // Simulate processing after 1 second
+    }, 1000); // Update after 1 second
   });
 }
 
@@ -27,7 +28,7 @@ function multiplyByTwo(data) {
       // Display final result
       document.getElementById('output').textContent = multipliedNumbers.join(', ');
       resolve(multipliedNumbers);
-    }, 2000); // Simulate processing after 2 seconds
+    }, 2000); // Update after 2 seconds
   });
 }
 
